@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<p><h1 class="profile-user">User: {{request.user.username}}</h1></p>
+    {% if item_manager%}
+        <div class="img">
+            <a href="{% url 'profile' %}?pk={{items_owner.id}}"> <img style="background-image:url(../../static/media/Screenshot_from_2023-06-20_12-47-36_ctGKZna.png)" class="img-test"> </a>
+        </div>
+        <div class="item-manager-form"> 
+            <form method="POST">
+                {%csrf_token%}
+                <p>
+                    <label class="form-text" >Product: </label>
+                    <input class="form-input" type="text" name="title" value="{{items_owner.product}}">
+                </p>
+                
+                <p>    
+                    <label class="form-text" for="">Price: </label>
+                    <input class="form-input" type="text" name="price" value="{{items_owner.price}}">
+                </p>
+                <p>
+                     
+                    <textarea class="form-textarea" name="description" placeholder="Here describe the product....">{{items_owner.description}}</textarea>
+                </p>
+                <input class="button-item-manager-delete" type="submit" name="action" value="update"> &emsp;
+                <input class="button-item-manager-update" type="submit" name="action" value="delete">
+            </form>
+        </div>
+        
+    
+    {%else%}
+        {%if items_owner|length <= 3 %}
+
+        <div class="small-site">
+            
+            {% for item in items_owner %}
+
+                <div class="item-small-preview">
+                    <div class="img">
+                        <a href="{% url 'profile' %}?pk={{item.id}}"> <img style="background-image:url(../../static/media/Screenshot_from_2023-06-20_12-47-36_ctGKZna.png)" class="img-test"> </a>
+                    </div>
+                    
+                    <a href="{% url 'item_list' %}?pk={{item.id}}">
+                            <p>
+                                Product: {{item.product}}
+                            </p>
+                            <p>
+                                Price: {{item.price}}
+                            </p>
+                            <p>
+                                Owner: {{item.item_owner}}
+                            </p>
+                        </a>
+                        <div class="button-center">
+                            <a href="{% url 'profile'%}?pk={{item.id}}">
+                                <button class="button-item-manager">Item manager</button>
+                            </a>
+                        </div>
+                    
+                </div>
+    
+            {% endfor %}
+        </div>
+   
+        {%else%}
+        <div class="big-site">
+            
+        {% for item in items_owner %}
+        <div class="item-small-preview">
+            <div class="img">
+                <a href="{% url 'profile' %}?pk={{item.id}}"> <img style="background-image:url(../../static/media/Screenshot_from_2023-06-20_12-47-36_ctGKZna.png)" class="img-test"> </a>
+            </div>
+            
+            <a href="{% url 'item_list' %}?pk={{item.id}}">
+                    <p>
+                        Product: {{item.product}}
+                    </p>
+                    <p>
+                        Price: {{item.price}}
+                    </p>
+                    <p>
+                        Owner: {{item.item_owner}}
+                    </p>
+                </a>
+                <div class="button-center">
+                    <a href="{% url 'profile'%}?pk={{item.id}}">
+                        <button class="button-item-manager">Item manager</button>
+                    </a>
+                </div>
+            
+        </div>
+        {% endfor %}
+        </div>
+        {%endif%}
+    {%endif%}
+
+{% endblock %}
+
+<!-- formularz -> placeholder | UDPATE DELETE -->

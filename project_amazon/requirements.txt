@@ -1,0 +1,7 @@
+django
+djangorestframework
+django-environ
+requests
+pillow
+psycopg2-binary
+

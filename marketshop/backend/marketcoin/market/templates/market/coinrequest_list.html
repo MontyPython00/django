@@ -1,0 +1,32 @@
+{%extends 'base.html'%}
+{%block content%}
+<h1>List of Requests</h1>
+<table>
+    <thead>
+        <tr>
+            <td><h2>Name&nbsp;</h2></td>
+            <td><h2>Price&nbsp;</h2></td> 
+            <td><h2>Status&nbsp;</h2></td>
+            <td><h2>Action&nbsp;</h2></td>
+            
+        </tr>
+        {%for coin in coinrequest_list%}
+        <tr>
+            <td><p>{{coin.name}}</p></td>
+            <td><p>{{coin.price}}</p></td>
+            <td><p>{{coin.status}}</p></td>
+            <td><p><a href="/market/coinrequest_list/update/{{coin.id}}">Update</a></p></td>
+        </tr>
+        {%endfor%}
+
+        {%if coinrequest_list|length == 0 %}
+        <tr>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+        </tr>
+        {%endif%}
+    </thead>
+</table>
+{%endblock%}

@@ -1,0 +1,57 @@
+.header-link{
+    font-size:20px;
+    color:white;
+    text-decoration: none;    
+    transition: 150ms;
+}
+
+.header-link:hover {
+    font-size:30px;
+    
+    color:rgb(43, 92, 184);
+
+}
+
+.header-link-logo{
+    font-size:30px;
+    color:white;
+    text-decoration: none;    
+    transition: 150ms;
+}
+
+.header-link-logo:hover {
+    font-size:40px;
+    color:rgb(43, 92, 184);
+}
+
+
+
+.header {
+    background-color:rgb(9, 36, 71);
+    position:fixed;
+    top:0px;
+    left:0px;
+    right:0px;
+    height:70px;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.left-section{
+    margin-left:20px;
+    flex:1;
+}
+
+.middle-section{
+    width:500px;
+    text-align: center;
+}
+
+.right-section{
+    margin-right:20px;
+    flex:1;  
+    text-align:end;
+}

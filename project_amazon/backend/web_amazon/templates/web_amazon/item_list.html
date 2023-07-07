@@ -1,0 +1,57 @@
+{% extends 'base.html'%}
+{% block content %}
+    {%if pk%}
+        
+            <div class="img">
+                <a href="{% url 'item_list' %}?pk={{item.id}}"> <img style="background-image:url(../../static/media/Screenshot_from_2023-06-20_12-47-36_ctGKZna.png)" class="img-test"> </a>
+            </div>
+            <div class="item-details">
+                <p>
+                    Owner:{{data.item_owner}}
+                </p>
+                <p>
+                    Product:{{data.product}}
+                </p>
+                <p>
+                    Price:{{data.price}}
+                </p>
+                <p>
+                    Description:{{data.description}}
+                </p>
+            </div>
+        
+    {%else%}
+    
+        {% if data.length > 3 %} 
+
+        # ponizej dajemy flexa przy 4 wracamy do grida 
+        
+        {%else%}
+        <div class="big-site">
+            {%for item in data%}
+                <div class="item-big-preview">
+                    <div class="img">
+                        <a href="{% url 'item_list' %}?pk={{item.id}}"> <img style="background-image:url(../../static/media/Screenshot_from_2023-06-20_12-47-36_ctGKZna.png)" class="img-test"> </a>
+                    </div>
+                    
+                    <div class="item-info">
+                        <a href="{% url 'item_list' %}?pk={{item.id}}">
+                        <p>
+                            Product: {{item.product}}
+                        </p>
+                        <p>
+                            Price: {{item.price}}
+                        </p>
+                        <p>
+                            Owner: {{item.item_owner}}
+                        </p>
+                        </a>
+                    </div>
+                </div>
+            {%endfor%}
+        </div>
+        {%endif%}
+    
+    {%endif%}
+{% endblock %}
+

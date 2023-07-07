@@ -1,0 +1,42 @@
+/* *,
+*::before,
+*::after{box-sizing:border-box;} */
+
+body {
+    background-color: grey;
+    font-family: monospace;
+}
+
+.list_button {
+    background-color: lightgrey;
+    font-family:monospace;
+    
+}
+
+.navBar {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    
+
+}
+
+.navBarList {
+    display:inline-block;
+    text-align: center;
+
+}
+
+.navBarLink {
+    padding:8px;
+    
+}
+
+a {
+    color:black;
+}
+
+td {
+    border: 1px solid black;
+    padding:5px;
+}

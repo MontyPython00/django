@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    {%load static%}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'market/style.css'%}">
+    <title>MarketCoin</title>
+</head>
+<body>
+    <ul class="navBar">
+        <li class="navBarList"><a href="{%url 'market:market_home'%}" class="navBarLink"><h1>Home</h1></a></li>
+        <li class="navBarList"></li>
+        <li class="navBarList"></li>
+        <li class="navBarList"><a href="{%url 'market:coinrequest_list'%}" class="navBarLink"><h1>Coin Requests</h1></a></li>
+        <li class="navBarList"></li>
+        <li class="navBarList"></li>
+        <li class="navBarList"><a href="{%url 'market:coinrequest_form' %}" class="navBarLink"><h1>Request Form</h1></a></li>
+        {%if not user.is_authenticated%}
+        <li class="navBarList"></li>
+        <li class="navBarList"></li>
+        <li class="navBarList"><a href="{%url 'market:register'%}" class="navBarLink"><h1>Registration</h1></a></li>
+        {%endif%}
+        <li class="navBarList"></li>
+        <li class="navBarList"></li>
+        {%if user.is_authenticated%}
+        <li class="navBarList"><a href="{%url 'logout'%}?next={{request.path}}" class="navBarLink"><h1>Logout</h1></a></li>
+        {%else%}
+        <li class="navBarList"><a href="{%url 'login'%}" class="navBarLink"><h1>Sign In</h1></a></li>
+        {%endif%}
+    </ul>
+    
+    {%block content%}
+    
+    {%endblock%}
+    
+    {%if user.is_authenticated%}
+        </br>
+            <h2>User: {{user.get_username}}</h2>
+            
+    {%endif%}
+
+</body>
+</html>

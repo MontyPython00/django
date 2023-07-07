@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+{%block content%}
+{%load static%}
+<main>
+    <h1>
+{%for coin in coins%}
+{{coin}}$ </br>
+{%endfor%}
+</h1>
+<form action="" method="POST">
+
+    {%csrf_token%}
+    {{form.search.label_tag}}
+    {{form.search}}
+     
+    <input type="submit" class='btn btn-primary' value="Search">
+</form>
+    <img src="{%static 'wallet/pgb-chip-crypto-3.svg'%}">
+    
+    
+
+</main>
+
+{%endblock%}
+

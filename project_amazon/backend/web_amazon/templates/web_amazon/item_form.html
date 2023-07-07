@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+    <form method="POST" class="item-manager-form">
+        {%csrf_token%}
+        
+        <p><label class="form-text">Product: </label>{{item_form.name}}</p>
+        <p>{{item_form.description}}</p>
+        <p><label class="form-text">Price: </label>{{item_form.price}}</p>
+        
+        <input class="button-item-form" type="submit" value="Create">
+    </form>
+
+{% endblock %}

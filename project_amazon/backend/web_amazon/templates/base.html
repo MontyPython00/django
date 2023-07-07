@@ -1,0 +1,48 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'web_amazon/base.css' %}">
+    <link rel="stylesheet" href="{% static 'web_amazon/header.css' %}">
+    <title>Amazon</title>
+</head>
+<body>
+    <div class="header">
+        <div class="left-section">
+
+            <a class="header-link-logo" href="{% url 'item_list' %}"> Tamazon </a> 
+
+        </div>
+        
+        <div class="middle-section">
+
+            <a class="header-link" href="{%url 'item_form' %}"> Item Form</a> 
+                
+        </div> 
+        
+        <div class="right-section">
+        {% if user.is_authenticated %}
+            
+            <a class="header-link" href="{%url 'profile' %}"> Profile</a> &emsp;
+            <a class="header-link" href="{% url 'logout'%}?next={{request.path}}">Log out</a>
+            
+        {%else%}
+                <a class="header-link" href="{%url 'register'%}">Sign Up</a> &emsp; 
+                <a class="header-link" href="{%url 'login'%}">Login</a> 
+                
+            
+        {%endif%}
+
+        </div>
+    </div>
+
+    
+    {% block content %}
+
+
+
+    {% endblock %}
+
+</body>
+</html>

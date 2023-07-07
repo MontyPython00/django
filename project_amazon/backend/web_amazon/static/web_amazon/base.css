@@ -1,0 +1,139 @@
+body {
+    background-color:rgb(63, 110, 141);
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    margin:0;
+    padding-top:100px;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+a {
+    text-decoration:none;
+    color:white;
+}
+
+
+.small-site{
+    display:grid;
+    grid-template-columns: 300px 300px;
+    justify-content: center;
+    row-gap: 30px;
+    column-gap: 200px;
+}
+
+.item-small-preview {
+    border-style:solid;
+    border-color:rgba(36, 36, 106, 0.872);
+    border-width:2px;
+    box-shadow: 2px 2px 5px rgb(9, 36, 71);
+    
+}
+
+.big-site {
+    display:grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    justify-content: center;
+    row-gap: 30px;
+    column-gap: 200px;
+}
+
+.item-big-preview{
+    
+    border-style:solid;
+    border-color:rgba(36, 36, 106, 0.872);
+    border-width:2px;
+    box-shadow: 2px 2px 5px rgb(9, 36, 71);
+
+}
+
+.profile-user {
+    text-align:center;
+}
+
+.item-manager-form { 
+    text-align: center;
+}
+
+
+.form-text {
+    font-size:20px;
+}
+
+.form-input {
+    font-size: 25px;
+    border-radius:5px;
+}
+
+.form-textarea {
+    width:830px;
+    height:230px;
+    font-size:25px;
+    
+
+}
+
+.button-item-form { 
+    padding: 5px 10px 5px 10px;
+    border-radius:5px;
+    border-style:solid;
+    font-size:30px;
+}
+
+.button-item-form:hover {
+    background-color: rgba(255, 255, 255, 0.54);
+    cursor:pointer;
+}
+
+.button-center {
+    text-align: center;
+    margin-bottom:5px;
+}
+
+
+
+.button-item-manager { 
+    padding: 5px 10px 5px 10px;
+    border-radius:5px;
+    border-style:solid;
+}
+
+.button-item-manager:hover {
+    background-color: rgba(255, 255, 255, 0.54);
+    cursor:pointer;
+}
+
+.button-item-manager-update {
+    margin-right:25px;
+}
+
+
+
+.button-item-manager-update, .button-item-manager-delete { 
+    padding: 5px 10px 5px 10px;
+    border-radius:5px;
+    border-style:solid;
+    font-size:25px;
+}
+
+.button-item-manager-update:hover, .button-item-manager-delete:hover {
+    background-color: rgba(255, 255, 255, 0.54);
+    cursor:pointer;
+}
+
+.img-test {
+    height:200px;
+    width:100%;
+    
+}
+
+.item-details{ 
+    text-align: center;
+    font-size:25px;
+}
+
+.item-info{
+    color:white;
+    padding-left:10px;
+    
+}

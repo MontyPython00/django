@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+{%block content%}
+
+{%if account%}
+{%load static%}
+<main>
+<h1>Welcome, {{user}}!</h1>
+<img src="{%static 'wallet/pgb-chip-crypto-3.svg'%}">
+</br>
+</main>
+{%else%}
+      {%load static%}
+
+      <main>
+        <h1>Welcome, on the digital side of Power!</h1>
+      <form action="" method="POST">
+        {%csrf_token%}
+      
+        {{form.login.label_tag}} {{form.login}}
+   
+    
+        {{form.password.label_tag}} {{form.password}}
+    
+        <input type="submit" class="btn btn-primary" value="Sign In">
+    
+  </form>
+
+  {%if invalid_data%}
+</br>
+    Invalid login or password!
+  {%endif%}
+
+     <img src="{%static 'wallet/pgb-chip-crypto-3.svg'%}">
+
+      </main>
+{%endif%}
+      {%endblock%}
